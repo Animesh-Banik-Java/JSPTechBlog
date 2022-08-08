@@ -1,0 +1,21 @@
+
+Alter column in table:- alter table user add profile varchar(80) default 'default.png' not null;
+ 
+Create table :- 1) create table user101(id int NOT NULL AUTO_INCREMENT, user_name varchar(20), password varchar(20), email varchar(30), PRIMARY KEY (id))";
+
+Create table :- 2) create table users(id int NOT NULL AUTO_INCREMENT, name varchar(30) NOT NULL, email varchar(50) NOT NULL UNIQUE, password varchar(30) NOT NULL, gender varchar(20) NOT NULL, about varchar(1000), rdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP(), profile varchar(100) default 'default.png', PRIMARY KEY (id));
+
+Create table with foreign key:- 3) create table posts (pId int not null auto_increment, pTitle varchar(200) not null, pContent longtext, pCode longtext, pPic varchar(150), pDate timestamp DEFAULT CURRENT_TIMESTAMP(),cid int, userid int, primary key (pId), FOREIGN KEY (cid) REFERENCES categories(cid), FOREIGN KEY (userid) REFERENCES users(id));
+
+Create table with CASCADE:- 4)Create table Liked (lid int auto_increment, pid int not null, uid int not null, primary key(lid),FOREIGN KEY (pid) REFERENCES posts(pId)  ON DELETE CASCADE, FOREIGN KEY(uid) REFERENCES USERS(ID) ON DELETE CASCADE);
+
+
+
+
+
+
+
+
+
+
+
